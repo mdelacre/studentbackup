@@ -1,0 +1,614 @@
+#######################################################
+#   POWER : S1 = Chi(2) ; S2 = RSkewed(0,2*ratio)     #
+#######################################################
+
+for (package in c("PairedData","fGarch","smoothmest")) {
+    if (!require(package, character.only=T, quietly=T)) {
+        install.packages(package)
+        library(package, character.only=T)
+    }
+}
+
+setwd(dir="C:/Users/mdela/Dropbox/Welch vs. Students_final Scripts/Table A3 power for distributions/With extreme SDR/Chi squared and normal skewed")
+
+ratio <- c(0.01,0.1,10,100)   # ratio = sd2/sd1
+r <- c(1,2,3,4,5)    # r = n2/n1
+
+nSims=1000000
+generation=c(1:nSims)   # to generate pairs of independent samples
+
+###### n=10 and r=1
+
+	Power_bis=function(ratio){
+
+		generate=function(i){
+			simulation <- function(n1,r,ratio){
+				# i = the ith generation
+				# n1 = sample size of the first sample
+				# r = n2/n1
+				# ratio = sd2/sd1
+
+			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
+			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+
+			# perform Welch
+			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
+			return(c(n1,r,p_welch))
+			}
+			simulation(10,1,ratio)
+		}
+
+		p_values=t(sapply(generation,generate)) # perform the function "simu" for each element of "generation" 
+     		      	            # (so do the generation 100 000 times)
+						# in R, "sapply" is more efficient than the loop (it's running faster)
+
+		n1= p_values[1]
+		r = p_values[1,2]
+
+		#View(results)
+		#Power
+
+		Power_welch <- sum(p_values[,3]<.05)/nSims
+		return(c(ratio,n1,r,Power_welch))
+
+	}
+
+	Power_rate=t(sapply(ratio,Power_bis))
+	write.table(Power_rate,paste("Chi square and normal skewed_n1=",Power_rate[1,2],"and r=",Power_rate[1,3],".txt"),sep=";",dec=",")
+
+###### n=10 and r=2
+
+	Power_bis=function(ratio){
+
+		generate=function(i){
+			simulation <- function(n1,r,ratio){
+				# i = the ith generation
+				# n1 = sample size of the first sample
+				# r = n2/n1
+				# ratio = sd2/sd1
+
+			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
+			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+
+			# perform Welch
+			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
+			return(c(n1,r,p_welch))
+			}
+			simulation(10,2,ratio)
+		}
+
+		p_values=t(sapply(generation,generate)) # perform the function "simu" for each element of "generation" 
+     		      	            # (so do the generation 100 000 times)
+						# in R, "sapply" is more efficient than the loop (it's running faster)
+
+		n1= p_values[1]
+		r = p_values[1,2]
+
+		#View(results)
+		#Power
+
+		Power_welch <- sum(p_values[,3]<.05)/nSims
+		return(c(ratio,n1,r,Power_welch))
+
+	}
+
+	Power_rate=t(sapply(ratio,Power_bis))
+	write.table(Power_rate,paste("Chi square and normal skewed_n1=",Power_rate[1,2],"and r=",Power_rate[1,3],".txt"),sep=";",dec=",")
+
+###### n=10 and r=3
+
+	Power_bis=function(ratio){
+
+		generate=function(i){
+			simulation <- function(n1,r,ratio){
+				# i = the ith generation
+				# n1 = sample size of the first sample
+				# r = n2/n1
+				# ratio = sd2/sd1
+
+			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
+			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+
+			# perform Welch
+			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
+			return(c(n1,r,p_welch))
+			}
+			simulation(10,3,ratio)
+		}
+
+		p_values=t(sapply(generation,generate)) # perform the function "simu" for each element of "generation" 
+     		      	            # (so do the generation 100 000 times)
+						# in R, "sapply" is more efficient than the loop (it's running faster)
+
+		n1= p_values[1]
+		r = p_values[1,2]
+
+		#View(results)
+		#Power 
+
+		Power_welch <- sum(p_values[,3]<.05)/nSims
+		return(c(ratio,n1,r,Power_welch))
+
+	}
+
+	Power_rate=t(sapply(ratio,Power_bis))
+	write.table(Power_rate,paste("Chi square and normal skewed_n1=",Power_rate[1,2],"and r=",Power_rate[1,3],".txt"),sep=";",dec=",")
+
+ ###### n=10 and r=4
+
+	Power_bis=function(ratio){
+
+		generate=function(i){
+			simulation <- function(n1,r,ratio){
+				# i = the ith generation
+				# n1 = sample size of the first sample
+				# r = n2/n1
+				# ratio = sd2/sd1
+
+			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
+			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+
+			# perform Welch
+			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
+			return(c(n1,r,p_welch))
+			}
+			simulation(10,4,ratio)
+		}
+
+		p_values=t(sapply(generation,generate)) # perform the function "simu" for each element of "generation" 
+     		      	            # (so do the generation 100 000 times)
+						# in R, "sapply" is more efficient than the loop (it's running faster)
+
+		n1= p_values[1]
+		r = p_values[1,2]
+
+		#View(results)
+		#Power 
+
+		Power_welch <- sum(p_values[,3]<.05)/nSims
+		return(c(ratio,n1,r,Power_welch))
+
+	}
+
+	Power_rate=t(sapply(ratio,Power_bis))
+	write.table(Power_rate,paste("Chi square and normal skewed_n1=",Power_rate[1,2],"and r=",Power_rate[1,3],".txt"),sep=";",dec=",")
+
+
+###### n=10 and r=5
+
+	Power_bis=function(ratio){
+
+		generate=function(i){
+			simulation <- function(n1,r,ratio){
+				# i = the ith generation
+				# n1 = sample size of the first sample
+				# r = n2/n1
+				# ratio = sd2/sd1
+
+			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
+			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+
+			# perform Welch
+			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
+			return(c(n1,r,p_welch))
+
+			}
+			simulation(10,5,ratio)
+		}
+
+		p_values=t(sapply(generation,generate)) # perform the function "simu" for each element of "generation" 
+     		      	            # (so do the generation 100 000 times)
+						# in R, "sapply" is more efficient than the loop (it's running faster)
+
+		n1= p_values[1]
+		r = p_values[1,2]
+
+		#View(results)
+		#Power 
+		Power_welch <- sum(p_values[,3]<.05)/nSims
+		return(c(ratio,n1,r,Power_welch))
+
+	}
+
+	Power_rate=t(sapply(ratio,Power_bis))
+	write.table(Power_rate,paste("Chi square and normal skewed_n1=",Power_rate[1,2],"and r=",Power_rate[1,3],".txt"),sep=";",dec=",")
+
+###### n=20 and r=1
+
+	Power_bis=function(ratio){
+
+		generate=function(i){
+			simulation <- function(n1,r,ratio){
+				# i = the ith generation
+				# n1 = sample size of the first sample
+				# r = n2/n1
+				# ratio = sd2/sd1
+
+			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
+			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+
+			# perform Welch
+			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
+			return(c(n1,r,p_welch))
+
+			}
+			simulation(20,1,ratio)
+		}
+
+		p_values=t(sapply(generation,generate)) # perform the function "simu" for each element of "generation" 
+     		      	            # (so do the generation 100 000 times)
+						# in R, "sapply" is more efficient than the loop (it's running faster)
+
+		n1= p_values[1]
+		r = p_values[1,2]
+
+		#View(results)
+		#Power 
+
+		Power_welch <- sum(p_values[,3]<.05)/nSims
+		return(c(ratio,n1,r,Power_welch))
+
+	}
+
+	Power_rate=t(sapply(ratio,Power_bis))
+	write.table(Power_rate,paste("Chi square and normal skewed_n1=",Power_rate[1,2],"and r=",Power_rate[1,3],".txt"),sep=";",dec=",")
+
+###### n=20 and r=2
+
+	Power_bis=function(ratio){
+
+		generate=function(i){
+			simulation <- function(n1,r,ratio){
+				# i = the ith generation
+				# n1 = sample size of the first sample
+				# r = n2/n1
+				# ratio = sd2/sd1
+
+			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
+			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+
+			# perform Welch
+			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
+			return(c(n1,r,p_welch))
+
+			}
+			simulation(20,2,ratio)
+		}
+
+		p_values=t(sapply(generation,generate)) # perform the function "simu" for each element of "generation" 
+     		      	            # (so do the generation 100 000 times)
+						# in R, "sapply" is more efficient than the loop (it's running faster)
+
+		n1= p_values[1]
+		r = p_values[1,2]
+
+		#View(results)
+		#Power 
+
+		Power_welch <- sum(p_values[,3]<.05)/nSims
+		return(c(ratio,n1,r,Power_welch))
+
+	}
+
+	Power_rate=t(sapply(ratio,Power_bis))
+	write.table(Power_rate,paste("Chi square and normal skewed_n1=",Power_rate[1,2],"and r=",Power_rate[1,3],".txt"),sep=";",dec=",")
+
+###### n=20 and r=3
+
+	Power_bis=function(ratio){
+
+		generate=function(i){
+			simulation <- function(n1,r,ratio){
+				# i = the ith generation
+				# n1 = sample size of the first sample
+				# r = n2/n1
+				# ratio = sd2/sd1
+
+			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
+			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+
+			# perform Welch
+			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
+			return(c(n1,r,p_welch))
+
+			}
+			simulation(20,3,ratio)
+		}
+
+		p_values=t(sapply(generation,generate)) # perform the function "simu" for each element of "generation" 
+     		      	            # (so do the generation 100 000 times)
+						# in R, "sapply" is more efficient than the loop (it's running faster)
+
+		n1= p_values[1]
+		r = p_values[1,2]
+
+		#View(results)
+		#Power 
+
+		Power_welch <- sum(p_values[,3]<.05)/nSims
+		return(c(ratio,n1,r,Power_welch))
+
+	}
+
+	Power_rate=t(sapply(ratio,Power_bis))
+	write.table(Power_rate,paste("Chi square and normal skewed_n1=",Power_rate[1,2],"and r=",Power_rate[1,3],".txt"),sep=";",dec=",")
+
+###### n=20 and r=4
+
+	Power_bis=function(ratio){
+
+		generate=function(i){
+			simulation <- function(n1,r,ratio){
+				# i = the ith generation
+				# n1 = sample size of the first sample
+				# r = n2/n1
+				# ratio = sd2/sd1
+
+			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
+			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+
+			# perform Welch
+			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
+			return(c(n1,r,p_welch))
+
+			}
+			simulation(20,4,ratio)
+		}
+
+		p_values=t(sapply(generation,generate)) # perform the function "simu" for each element of "generation" 
+     		      	            # (so do the generation 100 000 times)
+						# in R, "sapply" is more efficient than the loop (it's running faster)
+
+		n1= p_values[1]
+		r = p_values[1,2]
+
+		#View(results)
+		#Power 
+
+		Power_welch <- sum(p_values[,3]<.05)/nSims
+		return(c(ratio,n1,r,Power_welch))
+
+	}
+
+	Power_rate=t(sapply(ratio,Power_bis))
+	write.table(Power_rate,paste("Chi square and normal skewed_n1=",Power_rate[1,2],"and r=",Power_rate[1,3],".txt"),sep=";",dec=",")
+
+###### n=20 and r=5
+
+	Power_bis=function(ratio){
+
+		generate=function(i){
+			simulation <- function(n1,r,ratio){
+				# i = the ith generation
+				# n1 = sample size of the first sample
+				# r = n2/n1
+				# ratio = sd2/sd1
+
+			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
+			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+
+			# perform Welch
+			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
+			return(c(n1,r,p_welch))
+
+		}
+			simulation(20,5,ratio)
+		}
+
+		p_values=t(sapply(generation,generate)) # perform the function "simu" for each element of "generation" 
+     		      	            # (so do the generation 100 000 times)
+						# in R, "sapply" is more efficient than the loop (it's running faster)
+
+		n1= p_values[1]
+		r = p_values[1,2]
+
+		#View(results)
+		#Power 
+
+		Power_welch <- sum(p_values[,3]<.05)/nSims
+		return(c(ratio,n1,r,Power_welch))
+
+	}
+
+	Power_rate=t(sapply(ratio,Power_bis))
+	write.table(Power_rate,paste("Chi square and normal skewed_n1=",Power_rate[1,2],"and r=",Power_rate[1,3],".txt"),sep=";",dec=",")
+
+###### n=30 and r=1
+
+	Power_bis=function(ratio){
+
+		generate=function(i){
+			simulation <- function(n1,r,ratio){
+				# i = the ith generation
+				# n1 = sample size of the first sample
+				# r = n2/n1
+				# ratio = sd2/sd1
+
+			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
+			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+
+			# perform Welch
+			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
+			return(c(n1,r,p_welch))
+
+			}
+			simulation(30,1,ratio)
+		}
+
+		p_values=t(sapply(generation,generate)) # perform the function "simu" for each element of "generation" 
+     		      	            # (so do the generation 100 000 times)
+						# in R, "sapply" is more efficient than the loop (it's running faster)
+
+		n1= p_values[1]
+		r = p_values[1,2]
+
+		#View(results)
+		#Power 
+
+		Power_welch <- sum(p_values[,3]<.05)/nSims
+		return(c(ratio,n1,r,Power_welch))
+
+	}
+
+	Power_rate=t(sapply(ratio,Power_bis))
+	write.table(Power_rate,paste("Chi square and normal skewed_n1=",Power_rate[1,2],"and r=",Power_rate[1,3],".txt"),sep=";",dec=",")
+
+###### n=30 and r=2
+
+	Power_bis=function(ratio){
+
+		generate=function(i){
+			simulation <- function(n1,r,ratio){
+				# i = the ith generation
+				# n1 = sample size of the first sample
+				# r = n2/n1
+				# ratio = sd2/sd1
+
+			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
+			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+
+			# perform Welch
+			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
+			return(c(n1,r,p_welch))
+
+		}
+			simulation(30,2,ratio)
+		}
+
+		p_values=t(sapply(generation,generate)) # perform the function "simu" for each element of "generation" 
+     		      	            # (so do the generation 100 000 times)
+						# in R, "sapply" is more efficient than the loop (it's running faster)
+
+		n1= p_values[1]
+		r = p_values[1,2]
+
+		#View(results)
+		#Power 
+
+		Power_welch <- sum(p_values[,3]<.05)/nSims
+		return(c(ratio,n1,r,Power_welch))
+
+	}
+
+	Power_rate=t(sapply(ratio,Power_bis))
+	write.table(Power_rate,paste("Chi square and normal skewed_n1=",Power_rate[1,2],"and r=",Power_rate[1,3],".txt"),sep=";",dec=",")
+
+###### n=30 and r=3
+
+	Power_bis=function(ratio){
+
+		generate=function(i){
+			simulation <- function(n1,r,ratio){
+				# i = the ith generation
+				# n1 = sample size of the first sample
+				# r = n2/n1
+				# ratio = sd2/sd1
+
+			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
+			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+
+			# perform Welch
+			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
+			return(c(n1,r,p_welch))
+
+		}
+			simulation(30,3,ratio)
+		}
+
+		p_values=t(sapply(generation,generate)) # perform the function "simu" for each element of "generation" 
+     		      	            # (so do the generation 100 000 times)
+						# in R, "sapply" is more efficient than the loop (it's running faster)
+
+		n1= p_values[1]
+		r = p_values[1,2]
+
+		#View(results)
+		#Power 
+
+		Power_welch <- sum(p_values[,3]<.05)/nSims
+		return(c(ratio,n1,r,Power_welch))
+
+	}
+
+	Power_rate=t(sapply(ratio,Power_bis))
+	write.table(Power_rate,paste("Chi square and normal skewed_n1=",Power_rate[1,2],"and r=",Power_rate[1,3],".txt"),sep=";",dec=",")
+
+###### n=30 and r=4
+
+	Power_bis=function(ratio){
+
+		generate=function(i){
+			simulation <- function(n1,r,ratio){
+				# i = the ith generation
+				# n1 = sample size of the first sample
+				# r = n2/n1
+				# ratio = sd2/sd1
+
+			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
+			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+
+			# perform Welch
+			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
+			return(c(n1,r,p_welch))
+
+		}
+			simulation(30,4,ratio)
+		}
+
+		p_values=t(sapply(generation,generate)) # perform the function "simu" for each element of "generation" 
+     		      	            # (so do the generation 100 000 times)
+						# in R, "sapply" is more efficient than the loop (it's running faster)
+
+		n1= p_values[1]
+		r = p_values[1,2]
+
+		#View(results)
+		#Power 
+		Power_welch <- sum(p_values[,3]<.05)/nSims
+		return(c(ratio,n1,r,Power_welch))
+
+	}
+
+	Power_rate=t(sapply(ratio,Power_bis))
+	write.table(Power_rate,paste("Chi square and normal skewed_n1=",Power_rate[1,2],"and r=",Power_rate[1,3],".txt"),sep=";",dec=",")
+
+###### n=30 and r=5
+
+	Power_bis=function(ratio){
+
+		generate=function(i){
+			simulation <- function(n1,r,ratio){
+				# i = the ith generation
+				# n1 = sample size of the first sample
+				# r = n2/n1
+				# ratio = sd2/sd1
+
+			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
+			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+
+			# perform Welch
+			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
+			return(c(n1,r,p_welch))
+
+			}
+			simulation(30,5,ratio)
+		}
+
+		p_values=t(sapply(generation,generate)) # perform the function "simu" for each element of "generation" 
+     		      	            # (so do the generation 100 000 times)
+						# in R, "sapply" is more efficient than the loop (it's running faster)
+
+		n1= p_values[1]
+		r = p_values[1,2]
+
+		#View(results)
+		#Power 
+
+		Power_welch <- sum(p_values[,3]<.05)/nSims
+		return(c(ratio,n1,r,Power_welch))
+
+	}
+
+	Power_rate=t(sapply(ratio,Power_bis))
+	write.table(Power_rate,paste("Chi square and normal skewed_n1=",Power_rate[1,2],"and r=",Power_rate[1,3],".txt"),sep=";",dec=",")
+
