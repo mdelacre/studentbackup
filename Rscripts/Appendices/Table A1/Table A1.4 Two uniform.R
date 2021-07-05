@@ -11,7 +11,7 @@ for (package in c("PairedData","fGarch","smoothmest")) {
     }
 }
 
-setwd(dir="C:/Users/mdela/Dropbox/Welch vs. Students_final Scripts/Final after Review/R Scripts/All the scripts/Table A1.1 to A1.9/Stored files")
+setwd(dir="C:/Users/Admin/Documents/Github projects/studentbackup/scripts outputs/Appendices/Table A1/Table A1.4 Two uniform distributions")
 
 SDR <- c(0.01,0.1,10,100)   # ratio = sd2/sd1
 

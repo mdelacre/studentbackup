@@ -11,7 +11,7 @@ for (package in c("PairedData","fGarch","smoothmest")) {
     }
 }
 
-setwd(dir="C:/Users/mdela/Dropbox/Welch vs. Students_final Scripts/Final after Review/R Scripts/All the scripts/Table A1.1 to A1.9/Stored files")
+setwd(dir="C:/Users/Admin/Documents/Github projects/studentbackup/scripts outputs/Appendices/Table A1/Table A1.1 Two normal distributions")
 
 SDR <- c(0.01,0.1,10,100)   # ratio = sd2/sd1
 
@@ -30,7 +30,6 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 
 			sample1 <- rnorm(n,sd=2) # by default, moy=0
 			sample2 <- rnorm(n,sd=SDR*2)  	
-
 
 			# perform Welch and Student
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
