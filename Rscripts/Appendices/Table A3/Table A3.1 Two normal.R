@@ -12,7 +12,7 @@ for (package in c("PairedData","fGarch","smoothmest")) {
 ratio <- c(0.5,1,1.5,2)   # ratio = sd2/sd1
 r <- c(0.5,1,1.5,2)    # r = n2/n1
 
-setwd(dir="C:/Users/mdela/Dropbox/Welch vs. Students_final Scripts/Appendix/Table A3/Stored files")
+setwd(dir="C:/Users/Admin/Documents/Github projects/studentbackup/scripts outputs/Appendices/Table A3/Table A3.1 Two normal distributions")
 
 nSims=1000000
 generation=c(1:nSims)   # to generate pairs of independent samples

@@ -9,7 +9,7 @@ for (package in c("PairedData","fGarch","smoothmest")) {
     }
 }
 
-setwd(dir="C:/Users/mdela/Dropbox/Welch vs. Students_final Scripts/Table A3 for different non normal distributions/Middle to big SS/Chi squared and normal skewed")
+setwd(dir="C:/Users/Admin/Documents/Github projects/studentbackup/scripts outputs/Appendices/Table A3/Table A3.9 One chi(2), one normal skewed")
 
 ratio <- c(0.5,1,1.5,2)   # ratio = sd2/sd1
 r <- c(0.5,1,1.5,2)    # r = n2/n1
