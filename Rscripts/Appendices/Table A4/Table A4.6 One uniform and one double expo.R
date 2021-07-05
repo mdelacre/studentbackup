@@ -1,17 +1,15 @@
-#################################################################################################
-# PART 1: ALPHA RISK : S1 = Nskewed(0,2,skewness=-1.99) ; S2 = Nskewed(0,2*ratio,skewness=1.99) #
-#################################################################################################
+#################################################################################
+#  PART 1: the specificity of the classical 2-sample t-test and Welch's t-test  #
+# to the assumption of equal variance when the normality assumption holds true  #
+#################################################################################
 
-for (package in c("PairedData","fGarch","smoothmest")) {
-    if (!require(package, character.only=T, quietly=T)) {
-        install.packages(package)
-        library(package, character.only=T)
-    }
-}
+library(fGarch)
+library(coin)
+library(smoothmest)
 
-setwd(dir="C:/Users/mdela/Dropbox/Welch vs. Students_final Scripts/Table A3 power for distributions/With extreme SDR/Normal skewed_unequal asymetry")
+setwd(dir="C:/Users/Admin/Documents/Github projects/studentbackup/scripts outputs/Appendices/Table A4/Table A4.6 One uniform, one double exponential")
 
-ratio <- c(0.01,0.1,10,100)   # ratio = sd2/sd1
+ratio <- c(0.01,100)   # ratio = sd2/sd1
 r <- c(1,2,3,4,5)    # r = n2/n1
 
 nSims=1000000
@@ -19,7 +17,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 
 ###### n=10 and r=1
 
-	alpha_bis=function(ratio){ 
+	alpha_bis=function(ratio){
 
 		generate=function(i){
 			simulation <- function(n1,r,ratio){
@@ -28,8 +26,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- rsnorm(n1, mean=0, sd=2,xi=-1.99) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- rsnorm(r*n1, mean=0, sd=ratio*2,xi=1.99)#simulate participants condition B, as a default option, mean = 0
+			sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, as a default option, mean = 0
+			sample2 <- rdoublex(r*n1, mu=0, ratio*2)#simulate participants condition B, as a default option, me
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -54,7 +52,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr_normal skewed with unequal asymetry_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Very extreme SDR_Uniform and double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=10 and r=2
 
@@ -67,8 +65,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- rsnorm(n1, mean=0, sd=2,xi=-1.99) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- rsnorm(r*n1, mean=0, sd=ratio*2,xi=1.99)#simulate participants condition B, as a default option, mean = 0
+			sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, as a default option, mean = 0
+			sample2 <- rdoublex(r*n1, mu=0, ratio*2)#simulate participants condition B, as a default option, me
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -93,7 +91,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr_normal skewed with unequal asymetry_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Very extreme SDR_Uniform and double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=10 and r=3
 
@@ -106,8 +104,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- rsnorm(n1, mean=0, sd=2,xi=-1.99) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- rsnorm(r*n1, mean=0, sd=ratio*2,xi=1.99)#simulate participants condition B, as a default option, mean = 0
+			sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, as a default option, mean = 0
+			sample2 <- rdoublex(r*n1, mu=0, ratio*2)#simulate participants condition B, as a default option, me
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -132,7 +130,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr_normal skewed with unequal asymetry_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Very extreme SDR_Uniform and double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=10 and r=4
 
@@ -145,8 +143,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- rsnorm(n1, mean=0, sd=2,xi=-1.99) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- rsnorm(r*n1, mean=0, sd=ratio*2,xi=1.99)#simulate participants condition B, as a default option, mean = 0
+			sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, as a default option, mean = 0
+			sample2 <- rdoublex(r*n1, mu=0, ratio*2)#simulate participants condition B, as a default option, me
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -171,8 +169,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr_normal skewed with unequal asymetry_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
-
+	write.table(alpha_rate,paste("Very extreme SDR_Uniform and double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=10 and r=5
 
@@ -185,8 +182,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- rsnorm(n1, mean=0, sd=2,xi=-1.99) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- rsnorm(r*n1, mean=0, sd=ratio*2,xi=1.99)#simulate participants condition B, as a default option, mean = 0
+			sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, as a default option, mean = 0
+			sample2 <- rdoublex(r*n1, mu=0, ratio*2)#simulate participants condition B, as a default option, me
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -212,7 +209,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr_normal skewed with unequal asymetry_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Very extreme SDR_Uniform and double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=20 and r=1
 
@@ -225,8 +222,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- rsnorm(n1, mean=0, sd=2,xi=-1.99) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- rsnorm(r*n1, mean=0, sd=ratio*2,xi=1.99)#simulate participants condition B, as a default option, mean = 0
+			sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, as a default option, mean = 0
+			sample2 <- rdoublex(r*n1, mu=0, ratio*2)#simulate participants condition B, as a default option, me
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -252,7 +249,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr_normal skewed with unequal asymetry_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Very extreme SDR_Uniform and double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=20 and r=2
 
@@ -265,8 +262,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- rsnorm(n1, mean=0, sd=2,xi=-1.99) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- rsnorm(r*n1, mean=0, sd=ratio*2,xi=1.99)#simulate participants condition B, as a default option, mean = 0
+			sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, as a default option, mean = 0
+			sample2 <- rdoublex(r*n1, mu=0, ratio*2)#simulate participants condition B, as a default option, me
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -292,7 +289,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr_normal skewed with unequal asymetry_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Very extreme SDR_Uniform and double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=20 and r=3
 
@@ -305,8 +302,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- rsnorm(n1, mean=0, sd=2,xi=-1.99) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- rsnorm(r*n1, mean=0, sd=ratio*2,xi=1.99)#simulate participants condition B, as a default option, mean = 0
+			sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, as a default option, mean = 0
+			sample2 <- rdoublex(r*n1, mu=0, ratio*2)#simulate participants condition B, as a default option, me
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -332,7 +329,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr_normal skewed with unequal asymetry_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Very extreme SDR_Uniform and double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=20 and r=4
 
@@ -345,8 +342,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- rsnorm(n1, mean=0, sd=2,xi=-1.99) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- rsnorm(r*n1, mean=0, sd=ratio*2,xi=1.99)#simulate participants condition B, as a default option, mean = 0
+			sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, as a default option, mean = 0
+			sample2 <- rdoublex(r*n1, mu=0, ratio*2)#simulate participants condition B, as a default option, me
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -372,7 +369,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr_normal skewed with unequal asymetry_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Very extreme SDR_Uniform and double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=20 and r=5
 
@@ -385,8 +382,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- rsnorm(n1, mean=0, sd=2,xi=-1.99) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- rsnorm(r*n1, mean=0, sd=ratio*2,xi=1.99)#simulate participants condition B, as a default option, mean = 0
+			sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, as a default option, mean = 0
+			sample2 <- rdoublex(r*n1, mu=0, ratio*2)#simulate participants condition B, as a default option, me
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -412,7 +409,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr_normal skewed with unequal asymetry_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Very extreme SDR_Uniform and double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=30 and r=1
 
@@ -425,8 +422,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- rsnorm(n1, mean=0, sd=2,xi=-1.99) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- rsnorm(r*n1, mean=0, sd=ratio*2,xi=1.99)#simulate participants condition B, as a default option, mean = 0
+			sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, as a default option, mean = 0
+			sample2 <- rdoublex(r*n1, mu=0, ratio*2)#simulate participants condition B, as a default option, me
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -452,7 +449,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr_normal skewed with unequal asymetry_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Very extreme SDR_Uniform and double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=30 and r=2
 
@@ -465,8 +462,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- rsnorm(n1, mean=0, sd=2,xi=-1.99) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- rsnorm(r*n1, mean=0, sd=ratio*2,xi=1.99)#simulate participants condition B, as a default option, mean = 0
+			sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, as a default option, mean = 0
+			sample2 <- rdoublex(r*n1, mu=0, ratio*2)#simulate participants condition B, as a default option, me
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -492,7 +489,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr_normal skewed with unequal asymetry_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Very extreme SDR_Uniform and double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=30 and r=3
 
@@ -505,8 +502,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- rsnorm(n1, mean=0, sd=2,xi=-1.99) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- rsnorm(r*n1, mean=0, sd=ratio*2,xi=1.99)#simulate participants condition B, as a default option, mean = 0
+			sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, as a default option, mean = 0
+			sample2 <- rdoublex(r*n1, mu=0, ratio*2)#simulate participants condition B, as a default option, me
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -532,7 +529,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr_normal skewed with unequal asymetry_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Very extreme SDR_Uniform and double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=30 and r=4
 
@@ -545,8 +542,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- rsnorm(n1, mean=0, sd=2,xi=-1.99) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- rsnorm(r*n1, mean=0, sd=ratio*2,xi=1.99)#simulate participants condition B, as a default option, mean = 0
+			sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, as a default option, mean = 0
+			sample2 <- rdoublex(r*n1, mu=0, ratio*2)#simulate participants condition B, as a default option, me
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -572,7 +569,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr_normal skewed with unequal asymetry_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Very extreme SDR_Uniform and double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=30 and r=5
 
@@ -585,8 +582,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- rsnorm(n1, mean=0, sd=2,xi=-1.99) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- rsnorm(r*n1, mean=0, sd=ratio*2,xi=1.99)#simulate participants condition B, as a default option, mean = 0
+			sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, as a default option, mean = 0
+			sample2 <- rdoublex(r*n1, mu=0, ratio*2)#simulate participants condition B, as a default option, me
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -612,6 +609,6 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr_normal skewed with unequal asymetry_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
-
-  
+	write.table(alpha_rate,paste("Very extreme SDR_Uniform and double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+   
+ 

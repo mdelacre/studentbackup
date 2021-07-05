@@ -9,7 +9,7 @@ for (package in c("PairedData","fGarch","smoothmest")) {
     }
 }
 
-setwd(dir="C:/Users/mdela/Dropbox/Welch vs. Students_final Scripts/Table A3 for different non normal distributions/Welch with extreme SDR/Middle to big SS")
+setwd(dir="C:/Users/Admin/Documents/Github projects/studentbackup/scripts outputs/Appendices/Table A4/Table A4.1 Two normal distributions")
 
 ratio <- c(0.01,0.1,10,100)   # ratio = sd2/sd1
 r <- c(1,2,3,4,5)    # r = n2/n1
@@ -28,8 +28,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- rchisq(n1,df=2,ncp=0) # mean = df = 2; sd = 2
-			sample2 <- rsnorm(n1, mean=2, sd=ratio*2,xi=-1.99) # mean = 2 (the same than in the chi square) because we want to test the type 1 error rate
+			sample1 <- rnorm(n1,sd=2) # by default, moy=0
+			sample2 <- rnorm(r*n1,sd=ratio*2)  	
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -54,7 +54,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr SDR_one chi square and one normal skewed when n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Extr and very extr SDR_two normal when n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=10 and r=2
 
@@ -67,8 +67,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- rchisq(n1,df=2,ncp=0) # mean = df = 2; sd = 2
-			sample2 <- rsnorm(n1, mean=2, sd=ratio*2,xi=-1.99) # mean = 2 (the same than in the chi square) because we want to test the type 1 error rate
+			sample1 <- rnorm(n1,sd=2) # by default, moy=0
+			sample2 <- rnorm(r*n1,sd=ratio*2)  	
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -93,7 +93,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr SDR_one chi square and one normal skewed when n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Extr and very extr SDR_two normal when n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 
 
 ###### n=10 and r=3
@@ -107,8 +107,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- rchisq(n1,df=2,ncp=0) # mean = df = 2; sd = 2
-			sample2 <- rsnorm(n1, mean=2, sd=ratio*2,xi=-1.99) # mean = 2 (the same than in the chi square) because we want to test the type 1 error rate
+			sample1 <- rnorm(n1,sd=2) # by default, moy=0
+			sample2 <- rnorm(r*n1,sd=ratio*2)  	
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -133,7 +133,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr SDR_one chi square and one normal skewed when n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Extr and very extr SDR_two normal when n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=10 and r=4
 
@@ -146,8 +146,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- rchisq(n1,df=2,ncp=0) # mean = df = 2; sd = 2
-			sample2 <- rsnorm(n1, mean=2, sd=ratio*2,xi=-1.99) # mean = 2 (the same than in the chi square) because we want to test the type 1 error rate
+			sample1 <- rnorm(n1,sd=2) # by default, moy=0
+			sample2 <- rnorm(r*n1,sd=ratio*2)  	
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -172,7 +172,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr SDR_one chi square and one normal skewed when n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Extr and very extr SDR_two normal when n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+
 
 ###### n=10 and r=5
 
@@ -185,8 +186,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- rchisq(n1,df=2,ncp=0) # mean = df = 2; sd = 2
-			sample2 <- rsnorm(n1, mean=2, sd=ratio*2,xi=-1.99) # mean = 2 (the same than in the chi square) because we want to test the type 1 error rate
+			sample1 <- rnorm(n1,sd=2) # by default, moy=0
+			sample2 <- rnorm(r*n1,sd=ratio*2)  	
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -212,7 +213,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr SDR_one chi square and one normal skewed when n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Extr and very extr SDR_two normal when n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=20 and r=1
 
@@ -225,8 +226,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- rchisq(n1,df=2,ncp=0) # mean = df = 2; sd = 2
-			sample2 <- rsnorm(n1, mean=2, sd=ratio*2,xi=-1.99) # mean = 2 (the same than in the chi square) because we want to test the type 1 error rate
+			sample1 <- rnorm(n1,sd=2) # by default, moy=0
+			sample2 <- rnorm(r*n1,sd=ratio*2)  	
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -252,7 +253,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr SDR_one chi square and one normal skewed when n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Extr and very extr SDR_two normal when n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=20 and r=2
 
@@ -265,8 +266,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- rchisq(n1,df=2,ncp=0) # mean = df = 2; sd = 2
-			sample2 <- rsnorm(n1, mean=2, sd=ratio*2,xi=-1.99) # mean = 2 (the same than in the chi square) because we want to test the type 1 error rate
+			sample1 <- rnorm(n1,sd=2) # by default, moy=0
+			sample2 <- rnorm(r*n1,sd=ratio*2)  	
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -292,7 +293,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr SDR_one chi square and one normal skewed when n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Extr and very extr SDR_two normal when n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=20 and r=3
 
@@ -305,8 +306,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- rchisq(n1,df=2,ncp=0) # mean = df = 2; sd = 2
-			sample2 <- rsnorm(n1, mean=2, sd=ratio*2,xi=-1.99) # mean = 2 (the same than in the chi square) because we want to test the type 1 error rate
+			sample1 <- rnorm(n1,sd=2) # by default, moy=0
+			sample2 <- rnorm(r*n1,sd=ratio*2)  	
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -332,7 +333,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr SDR_one chi square and one normal skewed when n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Extr and very extr SDR_two normal when n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=20 and r=4
 
@@ -345,9 +346,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- rchisq(n1,df=2,ncp=0) # mean = df = 2; sd = 2
-			sample2 <- rsnorm(n1, mean=2, sd=ratio*2,xi=-1.99) # mean = 2 (the same than in the chi square) because we want to test the type 1 error rate
-
+			sample1 <- rnorm(n1,sd=2) # by default, moy=0
+			sample2 <- rnorm(r*n1,sd=ratio*2)  	
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -373,7 +373,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr SDR_one chi square and one normal skewed when n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Extr and very extr SDR_two normal when n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=20 and r=5
 
@@ -386,8 +386,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- rchisq(n1,df=2,ncp=0) # mean = df = 2; sd = 2
-			sample2 <- rsnorm(n1, mean=2, sd=ratio*2,xi=-1.99) # mean = 2 (the same than in the chi square) because we want to test the type 1 error rate
+			sample1 <- rnorm(n1,sd=2) # by default, moy=0
+			sample2 <- rnorm(r*n1,sd=ratio*2)  	
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -413,7 +413,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr SDR_one chi square and one normal skewed when n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Extr and very extr SDR_two normal when n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=30 and r=1
 
@@ -426,8 +426,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- rchisq(n1,df=2,ncp=0) # mean = df = 2; sd = 2
-			sample2 <- rsnorm(n1, mean=2, sd=ratio*2,xi=-1.99) # mean = 2 (the same than in the chi square) because we want to test the type 1 error rate
+			sample1 <- rnorm(n1,sd=2) # by default, moy=0
+			sample2 <- rnorm(r*n1,sd=ratio*2)  	
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -453,7 +453,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr SDR_one chi square and one normal skewed when n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Extr and very extr SDR_two normal when n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=30 and r=2
 
@@ -466,8 +466,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- rchisq(n1,df=2,ncp=0) # mean = df = 2; sd = 2
-			sample2 <- rsnorm(n1, mean=2, sd=ratio*2,xi=-1.99) # mean = 2 (the same than in the chi square) because we want to test the type 1 error rate
+			sample1 <- rnorm(n1,sd=2) # by default, moy=0
+			sample2 <- rnorm(r*n1,sd=ratio*2)  	
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -493,7 +493,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr SDR_one chi square and one normal skewed when n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Extr and very extr SDR_two normal when n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=30 and r=3
 
@@ -506,8 +506,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- rchisq(n1,df=2,ncp=0) # mean = df = 2; sd = 2
-			sample2 <- rsnorm(n1, mean=2, sd=ratio*2,xi=-1.99) # mean = 2 (the same than in the chi square) because we want to test the type 1 error rate
+			sample1 <- rnorm(n1,sd=2) # by default, moy=0
+			sample2 <- rnorm(r*n1,sd=ratio*2)  	
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -533,7 +533,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr SDR_one chi square and one normal skewed when n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Extr and very extr SDR_two normal when n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=30 and r=4
 
@@ -546,8 +546,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- rchisq(n1,df=2,ncp=0) # mean = df = 2; sd = 2
-			sample2 <- rsnorm(n1, mean=2, sd=ratio*2,xi=-1.99) # mean = 2 (the same than in the chi square) because we want to test the type 1 error rate
+			sample1 <- rnorm(n1,sd=2) # by default, moy=0
+			sample2 <- rnorm(r*n1,sd=ratio*2)  	
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -573,7 +573,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr SDR_one chi square and one normal skewed when n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Extr and very extr SDR_two normal when n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=30 and r=5
 
@@ -586,8 +586,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- rchisq(n1,df=2,ncp=0) # mean = df = 2; sd = 2
-			sample2 <- rsnorm(n1, mean=2, sd=ratio*2,xi=-1.99) # mean = 2 (the same than in the chi square) because we want to test the type 1 error rate
+			sample1 <- rnorm(n1,sd=2) # by default, moy=0
+			sample2 <- rnorm(r*n1,sd=ratio*2)  	
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -613,5 +613,5 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr SDR_one chi square and one normal skewed when n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Extr and very extr SDR_two normal when n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 

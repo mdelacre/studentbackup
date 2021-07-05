@@ -1,13 +1,15 @@
-#################################################################################
-#  PART 1: the specificity of the classical 2-sample t-test and Welch's t-test  #
-# to the assumption of equal variance when the normality assumption holds true  #
-#################################################################################
+################################################################################
+#      PART 1: ALPHA RISK : S1 = DOUBLEX(0,2) ; S2 = DOUBLEX(0,2*ratio)        #
+################################################################################
 
-library(fGarch)
-library(coin)
-library(smoothmest)
-
-setwd(dir="C:/Users/mdela/Dropbox/Welch vs. Students_final Scripts/Table A3 power for distributions/With extreme SDR/Uniform")
+for (package in c("PairedData","fGarch","smoothmest","coin")) {
+    if (!require(package, character.only=T, quietly=T)) {
+        install.packages(package)
+        library(package, character.only=T)
+    }
+}
+ 
+setwd(dir="C:/Users/Admin/Documents/Github projects/studentbackup/scripts outputs/Appendices/Table A4/Table A4.2 Two double exponential distributions")
 
 ratio <- c(0.01,0.1,10,100)   # ratio = sd2/sd1
 r <- c(1,2,3,4,5)    # r = n2/n1
@@ -26,8 +28,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- runif(r*n1,ratio*-3.465,ratio*3.465) #simulate participants condition B, as a default option, mean = 0
+			sample1 <- rdoublex(n1, mu=0, 2) #simulate participants condition A, as a default option, mean = 0
+			sample2 <- rdoublex(r*n1, mu=0, ratio*2)#simulate participants condition B, as a default option, mean = 0
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -52,7 +54,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr SDR_Two uniform_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(power_rate,paste("Double expo_n1=",power_rate[1,2],"and r=",power_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=10 and r=2
 
@@ -65,8 +67,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- runif(r*n1,ratio*-3.465,ratio*3.465) #simulate participants condition B, as a default option, mean = 0
+			sample1 <- rdoublex(n1, mu=0, 2) #simulate participants condition A, as a default option, mean = 0
+			sample2 <- rdoublex(r*n1, mu=0, ratio*2)#simulate participants condition B, as a default option, mean = 0
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -91,7 +93,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr SDR_Two uniform_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(power_rate,paste("Double expo_n1=",power_rate[1,2],"and r=",power_rate[1,3],".txt"),sep=";",dec=",")
 
 
 ###### n=10 and r=3
@@ -105,8 +107,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- runif(r*n1,ratio*-3.465,ratio*3.465) #simulate participants condition B, as a default option, mean = 0
+			sample1 <- rdoublex(n1, mu=0, 2) #simulate participants condition A, as a default option, mean = 0
+			sample2 <- rdoublex(r*n1, mu=0, ratio*2)#simulate participants condition B, as a default option, mean = 0
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -131,7 +133,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr SDR_Two uniform_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(power_rate,paste("Double expo_n1=",power_rate[1,2],"and r=",power_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=10 and r=4
 
@@ -144,8 +146,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- runif(r*n1,ratio*-3.465,ratio*3.465) #simulate participants condition B, as a default option, mean = 0
+			sample1 <- rdoublex(n1, mu=0, 2) #simulate participants condition A, as a default option, mean = 0
+			sample2 <- rdoublex(r*n1, mu=0, ratio*2)#simulate participants condition B, as a default option, mean = 0
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -170,7 +172,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr SDR_Two uniform_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(power_rate,paste("Double expo_n1=",power_rate[1,2],"and r=",power_rate[1,3],".txt"),sep=";",dec=",")
 
 
 ###### n=10 and r=5
@@ -184,8 +186,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- runif(r*n1,ratio*-3.465,ratio*3.465) #simulate participants condition B, as a default option, mean = 0
+			sample1 <- rdoublex(n1, mu=0, 2) #simulate participants condition A, as a default option, mean = 0
+			sample2 <- rdoublex(r*n1, mu=0, ratio*2)#simulate participants condition B, as a default option, mean = 0
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -211,7 +213,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr SDR_Two uniform_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(power_rate,paste("Double expo_n1=",power_rate[1,2],"and r=",power_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=20 and r=1
 
@@ -224,8 +226,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- runif(r*n1,ratio*-3.465,ratio*3.465) #simulate participants condition B, as a default option, mean = 0
+			sample1 <- rdoublex(n1, mu=0, 2) #simulate participants condition A, as a default option, mean = 0
+			sample2 <- rdoublex(r*n1, mu=0, ratio*2)#simulate participants condition B, as a default option, mean = 0
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -251,7 +253,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr SDR_Two uniform_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(power_rate,paste("Double expo_n1=",power_rate[1,2],"and r=",power_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=20 and r=2
 
@@ -264,8 +266,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- runif(r*n1,ratio*-3.465,ratio*3.465) #simulate participants condition B, as a default option, mean = 0
+			sample1 <- rdoublex(n1, mu=0, 2) #simulate participants condition A, as a default option, mean = 0
+			sample2 <- rdoublex(r*n1, mu=0, ratio*2)#simulate participants condition B, as a default option, mean = 0
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -291,7 +293,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr SDR_Two uniform_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(power_rate,paste("Double expo_n1=",power_rate[1,2],"and r=",power_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=20 and r=3
 
@@ -304,8 +306,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- runif(r*n1,ratio*-3.465,ratio*3.465) #simulate participants condition B, as a default option, mean = 0
+			sample1 <- rdoublex(n1, mu=0, 2) #simulate participants condition A, as a default option, mean = 0
+			sample2 <- rdoublex(r*n1, mu=0, ratio*2)#simulate participants condition B, as a default option, mean = 0
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -331,7 +333,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr SDR_Two uniform_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(power_rate,paste("Double expo_n1=",power_rate[1,2],"and r=",power_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=20 and r=4
 
@@ -344,8 +346,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- runif(r*n1,ratio*-3.465,ratio*3.465) #simulate participants condition B, as a default option, mean = 0
+			sample1 <- rdoublex(n1, mu=0, 2) #simulate participants condition A, as a default option, mean = 0
+			sample2 <- rdoublex(r*n1, mu=0, ratio*2)#simulate participants condition B, as a default option, mean = 0
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -371,7 +373,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr SDR_Two uniform_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(power_rate,paste("Double expo_n1=",power_rate[1,2],"and r=",power_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=20 and r=5
 
@@ -384,8 +386,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- runif(r*n1,ratio*-3.465,ratio*3.465) #simulate participants condition B, as a default option, mean = 0
+			sample1 <- rdoublex(n1, mu=0, 2) #simulate participants condition A, as a default option, mean = 0
+			sample2 <- rdoublex(r*n1, mu=0, ratio*2)#simulate participants condition B, as a default option, mean = 0
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -411,7 +413,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr SDR_Two uniform_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(power_rate,paste("Double expo_n1=",power_rate[1,2],"and r=",power_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=30 and r=1
 
@@ -424,8 +426,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- runif(r*n1,ratio*-3.465,ratio*3.465) #simulate participants condition B, as a default option, mean = 0
+			sample1 <- rdoublex(n1, mu=0, 2) #simulate participants condition A, as a default option, mean = 0
+			sample2 <- rdoublex(r*n1, mu=0, ratio*2)#simulate participants condition B, as a default option, mean = 0
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -451,7 +453,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr SDR_Two uniform_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(power_rate,paste("Double expo_n1=",power_rate[1,2],"and r=",power_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=30 and r=2
 
@@ -464,8 +466,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- runif(r*n1,ratio*-3.465,ratio*3.465) #simulate participants condition B, as a default option, mean = 0
+			sample1 <- rdoublex(n1, mu=0, 2) #simulate participants condition A, as a default option, mean = 0
+			sample2 <- rdoublex(r*n1, mu=0, ratio*2)#simulate participants condition B, as a default option, mean = 0
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -491,7 +493,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr SDR_Two uniform_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(power_rate,paste("Double expo_n1=",power_rate[1,2],"and r=",power_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=30 and r=3
 
@@ -504,8 +506,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- runif(r*n1,ratio*-3.465,ratio*3.465) #simulate participants condition B, as a default option, mean = 0
+			sample1 <- rdoublex(n1, mu=0, 2) #simulate participants condition A, as a default option, mean = 0
+			sample2 <- rdoublex(r*n1, mu=0, ratio*2)#simulate participants condition B, as a default option, mean = 0
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -531,7 +533,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr SDR_Two uniform_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(power_rate,paste("Double expo_n1=",power_rate[1,2],"and r=",power_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=30 and r=4
 
@@ -544,8 +546,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- runif(r*n1,ratio*-3.465,ratio*3.465) #simulate participants condition B, as a default option, mean = 0
+			sample1 <- rdoublex(n1, mu=0, 2) #simulate participants condition A, as a default option, mean = 0
+			sample2 <- rdoublex(r*n1, mu=0, ratio*2)#simulate participants condition B, as a default option, mean = 0
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -571,7 +573,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr SDR_Two uniform_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(power_rate,paste("Double expo_n1=",power_rate[1,2],"and r=",power_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=30 and r=5
 
@@ -584,8 +586,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- runif(r*n1,ratio*-3.465,ratio*3.465) #simulate participants condition B, as a default option, mean = 0
+			sample1 <- rdoublex(n1, mu=0, 2) #simulate participants condition A, as a default option, mean = 0
+			sample2 <- rdoublex(r*n1, mu=0, ratio*2)#simulate participants condition B, as a default option, mean = 0
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -611,5 +613,5 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Extr and very extr SDR_Two uniform_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(power_rate,paste("Double expo_n1=",power_rate[1,2],"and r=",power_rate[1,3],".txt"),sep=";",dec=",")
 
