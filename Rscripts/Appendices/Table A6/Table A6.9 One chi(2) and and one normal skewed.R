@@ -29,7 +29,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
-			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+			sample2 <- rsnorm(r*n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -68,7 +68,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
-			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+			sample2 <- rsnorm(r*n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -107,7 +107,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
-			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+			sample2 <- rsnorm(r*n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -146,7 +146,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
-			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+			sample2 <- rsnorm(r*n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -186,7 +186,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
-			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+			sample2 <- rsnorm(r*n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -225,7 +225,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
-			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+			sample2 <- rsnorm(r*n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -265,7 +265,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
-			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+			sample2 <- rsnorm(r*n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -305,7 +305,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
-			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+			sample2 <- rsnorm(r*n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -345,7 +345,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
-			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+			sample2 <- rsnorm(r*n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -385,7 +385,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
-			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+			sample2 <- rsnorm(r*n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -425,7 +425,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
-			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+			sample2 <- rsnorm(r*n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -465,7 +465,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
-			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+			sample2 <- rsnorm(r*n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -505,7 +505,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
-			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+			sample2 <- rsnorm(r*n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -545,7 +545,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
-			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+			sample2 <- rsnorm(r*n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -584,7 +584,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
-			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+			sample2 <- rsnorm(r*n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
 
 			# perform Welch
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value

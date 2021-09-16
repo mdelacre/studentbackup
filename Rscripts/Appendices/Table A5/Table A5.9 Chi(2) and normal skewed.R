@@ -9,7 +9,8 @@ for (package in c("PairedData","fGarch","smoothmest")) {
     }
 }
 
-setwd(dir="C:/Users/mdela/Dropbox/Welch vs. Students_final Scripts/Table A3 power for distributions/Medium to large SS/Chi squared and normal skewed")
+setwd(dir="C:/Users/Admin/Documents/Github projects/studentbackup/scripts outputs/Appendices/Table A5/Table A5.9 One chi(2), one normal skewed")
+
 
 ratio <- c(0.5,1,1.5,2)   # ratio = sd2/sd1
 r <- c(0.5,1,1.5,2)    # r = n2/n1
@@ -29,7 +30,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
-			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+			sample2 <- rsnorm(r*n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
 
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -72,7 +73,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
-			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+			sample2 <- rsnorm(r*n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
 
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -116,7 +117,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
-			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+			sample2 <- rsnorm(r*n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
 
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -159,7 +160,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
-			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+			sample2 <- rsnorm(r*n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
 
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -203,7 +204,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
-			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+			sample2 <- rsnorm(r*n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
 
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -246,7 +247,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
-			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+			sample2 <- rsnorm(r*n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
 
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -289,7 +290,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
-			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+			sample2 <- rsnorm(r*n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
 
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -332,7 +333,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
-			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+			sample2 <- rsnorm(r*n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
 
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -375,7 +376,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
-			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+			sample2 <- rsnorm(r*n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
 
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -418,7 +419,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
-			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+			sample2 <- rsnorm(r*n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
 
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -461,7 +462,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
-			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+			sample2 <- rsnorm(r*n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
 
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -504,7 +505,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
-			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+			sample2 <- rsnorm(r*n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
 
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -547,7 +548,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
-			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+			sample2 <- rsnorm(r*n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
 
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -590,7 +591,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
-			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+			sample2 <- rsnorm(r*n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
 
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -633,7 +634,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
-			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+			sample2 <- rsnorm(r*n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
 
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -676,7 +677,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rchisq(n1,df=2,ncp=0) #mean = df = 2
-			sample2 <- rsnorm(n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
+			sample2 <- rsnorm(r*n1, mean=3, sd=ratio*2,xi=-1.99) #mean = 3 (so mu2-m1=1)
 
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
