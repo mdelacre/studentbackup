@@ -29,9 +29,9 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rnorm(n1, mean=0, sd=2) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- rdoublex(r*n1, mu=1, ratio*2)#simulate participants condition B, as a default option, mean = 0
-
-			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
+			sample2 <- rdoublex(r*n1, mu=0, ratio*(2/sqrt(2)))#simulate participants condition B, as a default option, mean = 0
+			
+			# perform Student's t-test, Welch'S t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
 			p_student <- t.test(sample1,sample2,alternative="two.sided",var.equal=TRUE)$p.value
 	            p_yuen <- yuen.t.test(sample1,sample2, alternative = "two.sided")$p.value #perform the t-test and store p-value
@@ -72,8 +72,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rnorm(n1, mean=0, sd=2) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- rdoublex(r*n1, mu=1, ratio*2)#simulate participants condition B, as a default option, mean = 0
-
+			sample2 <- rdoublex(r*n1, mu=0, ratio*(2/sqrt(2)))#simulate participants condition B, as a default option, mean = 0
+			
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
 			p_student <- t.test(sample1,sample2,alternative="two.sided",var.equal=TRUE)$p.value
@@ -115,8 +115,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rnorm(n1, mean=0, sd=2) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- rdoublex(r*n1, mu=1, ratio*2)#simulate participants condition B, as a default option, mean = 0
-
+			sample2 <- rdoublex(r*n1, mu=0, ratio*(2/sqrt(2)))#simulate participants condition B, as a default option, mean = 0
+			
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
 			p_student <- t.test(sample1,sample2,alternative="two.sided",var.equal=TRUE)$p.value
@@ -157,8 +157,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rnorm(n1, mean=0, sd=2) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- rdoublex(r*n1, mu=1, ratio*2)#simulate participants condition B, as a default option, mean = 0
-
+			sample2 <- rdoublex(r*n1, mu=0, ratio*(2/sqrt(2)))#simulate participants condition B, as a default option, mean = 0
+			
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
 			p_student <- t.test(sample1,sample2,alternative="two.sided",var.equal=TRUE)$p.value
@@ -200,8 +200,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rnorm(n1, mean=0, sd=2) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- rdoublex(r*n1, mu=1, ratio*2)#simulate participants condition B, as a default option, mean = 0
-
+			sample2 <- rdoublex(r*n1, mu=0, ratio*(2/sqrt(2)))#simulate participants condition B, as a default option, mean = 0
+			
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
 			p_student <- t.test(sample1,sample2,alternative="two.sided",var.equal=TRUE)$p.value
@@ -242,8 +242,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rnorm(n1, mean=0, sd=2) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- rdoublex(r*n1, mu=1, ratio*2)#simulate participants condition B, as a default option, mean = 0
-
+			sample2 <- rdoublex(r*n1, mu=0, ratio*(2/sqrt(2)))#simulate participants condition B, as a default option, mean = 0
+			
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
 			p_student <- t.test(sample1,sample2,alternative="two.sided",var.equal=TRUE)$p.value
@@ -285,8 +285,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rnorm(n1, mean=0, sd=2) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- rdoublex(r*n1, mu=1, ratio*2)#simulate participants condition B, as a default option, mean = 0
-
+			sample2 <- rdoublex(r*n1, mu=0, ratio*(2/sqrt(2)))#simulate participants condition B, as a default option, mean = 0
+			
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
 			p_student <- t.test(sample1,sample2,alternative="two.sided",var.equal=TRUE)$p.value
@@ -328,8 +328,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rnorm(n1, mean=0, sd=2) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- rdoublex(r*n1, mu=1, ratio*2)#simulate participants condition B, as a default option, mean = 0
-
+			sample2 <- rdoublex(r*n1, mu=0, ratio*(2/sqrt(2)))#simulate participants condition B, as a default option, mean = 0
+			
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
 			p_student <- t.test(sample1,sample2,alternative="two.sided",var.equal=TRUE)$p.value
@@ -371,8 +371,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rnorm(n1, mean=0, sd=2) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- rdoublex(r*n1, mu=1, ratio*2)#simulate participants condition B, as a default option, mean = 0
-
+			sample2 <- rdoublex(r*n1, mu=0, ratio*(2/sqrt(2)))#simulate participants condition B, as a default option, mean = 0
+			
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
 			p_student <- t.test(sample1,sample2,alternative="two.sided",var.equal=TRUE)$p.value
@@ -414,8 +414,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rnorm(n1, mean=0, sd=2) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- rdoublex(r*n1, mu=1, ratio*2)#simulate participants condition B, as a default option, mean = 0
-
+			sample2 <- rdoublex(r*n1, mu=0, ratio*(2/sqrt(2)))#simulate participants condition B, as a default option, mean = 0
+			
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
 			p_student <- t.test(sample1,sample2,alternative="two.sided",var.equal=TRUE)$p.value
@@ -457,8 +457,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rnorm(n1, mean=0, sd=2) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- rdoublex(r*n1, mu=1, ratio*2)#simulate participants condition B, as a default option, mean = 0
-
+			sample2 <- rdoublex(r*n1, mu=0, ratio*(2/sqrt(2)))#simulate participants condition B, as a default option, mean = 0
+			
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
 			p_student <- t.test(sample1,sample2,alternative="two.sided",var.equal=TRUE)$p.value
@@ -500,8 +500,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rnorm(n1, mean=0, sd=2) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- rdoublex(r*n1, mu=1, ratio*2)#simulate participants condition B, as a default option, mean = 0
-
+			sample2 <- rdoublex(r*n1, mu=0, ratio*(2/sqrt(2)))#simulate participants condition B, as a default option, mean = 0
+			
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
 			p_student <- t.test(sample1,sample2,alternative="two.sided",var.equal=TRUE)$p.value
@@ -543,8 +543,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rnorm(n1, mean=0, sd=2) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- rdoublex(r*n1, mu=1, ratio*2)#simulate participants condition B, as a default option, mean = 0
-
+			sample2 <- rdoublex(r*n1, mu=0, ratio*(2/sqrt(2)))#simulate participants condition B, as a default option, mean = 0
+			
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
 			p_student <- t.test(sample1,sample2,alternative="two.sided",var.equal=TRUE)$p.value
@@ -586,8 +586,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rnorm(n1, mean=0, sd=2) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- rdoublex(r*n1, mu=1, ratio*2)#simulate participants condition B, as a default option, mean = 0
-
+			sample2 <- rdoublex(r*n1, mu=0, ratio*(2/sqrt(2)))#simulate participants condition B, as a default option, mean = 0
+			
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
 			p_student <- t.test(sample1,sample2,alternative="two.sided",var.equal=TRUE)$p.value
@@ -629,8 +629,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rnorm(n1, mean=0, sd=2) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- rdoublex(r*n1, mu=1, ratio*2)#simulate participants condition B, as a default option, mean = 0
-
+			sample2 <- rdoublex(r*n1, mu=0, ratio*(2/sqrt(2)))#simulate participants condition B, as a default option, mean = 0
+			
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
 			p_student <- t.test(sample1,sample2,alternative="two.sided",var.equal=TRUE)$p.value
@@ -672,8 +672,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rnorm(n1, mean=0, sd=2) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- rdoublex(r*n1, mu=1, ratio*2)#simulate participants condition B, as a default option, mean = 0
-
+			sample2 <- rdoublex(r*n1, mu=0, ratio*(2/sqrt(2)))#simulate participants condition B, as a default option, mean = 0
+			
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
 			p_student <- t.test(sample1,sample2,alternative="two.sided",var.equal=TRUE)$p.value

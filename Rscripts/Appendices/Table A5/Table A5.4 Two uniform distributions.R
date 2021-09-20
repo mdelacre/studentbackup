@@ -9,7 +9,7 @@ for (package in c("PairedData","fGarch","smoothmest")) {
     }
 }
 
-setwd(dir="C:/Users/mdela/Dropbox/Welch vs. Students_final Scripts/Table A3 power for distributions/Medium to large SS/Uniform")
+setwd(dir="C:/Users/Admin/Documents/Github projects/studentbackup/scripts outputs/Appendices/Table A5/Table A5.4 Two uniform distributions")
 
 ratio <- c(0.5,1,1.5,2)   # ratio = sd2/sd1
 r <- c(0.5,1,1.5,2)    # r = n2/n1
@@ -28,8 +28,8 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- runif(n1,-2.465,4.465) #simulate participants condition A, mean = 1
-			sample2 <- runif(r*n1,ratio*-3.465,ratio*3.465) #simulate participants condition B, mean = 0
+			sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, mean = 1
+			sample2 <- runif(r*n1,ratio*-2.465,ratio*4.465) #simulate participants condition B, mean = 0
 
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -71,9 +71,9 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- runif(n1,-2.465,4.465) #simulate participants condition A, mean = 1
-			sample2 <- runif(r*n1,ratio*-3.465,ratio*3.465) #simulate participants condition B, mean = 0
-
+			  sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, mean = 1
+			  sample2 <- runif(r*n1,ratio*-2.465,ratio*4.465) #simulate participants condition B, mean = 0
+			  
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
 			p_student <- t.test(sample1,sample2,alternative="two.sided",var.equal=TRUE)$p.value
@@ -114,9 +114,9 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- runif(n1,-2.465,4.465) #simulate participants condition A, mean = 1
-			sample2 <- runif(r*n1,ratio*-3.465,ratio*3.465) #simulate participants condition B, mean = 0
-
+			  sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, mean = 1
+			  sample2 <- runif(r*n1,ratio*-2.465,ratio*4.465) #simulate participants condition B, mean = 0
+			  
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
 			p_student <- t.test(sample1,sample2,alternative="two.sided",var.equal=TRUE)$p.value
@@ -157,9 +157,9 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- runif(n1,-2.465,4.465) #simulate participants condition A, mean = 1
-			sample2 <- runif(r*n1,ratio*-3.465,ratio*3.465) #simulate participants condition B, mean = 0
-
+			  sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, mean = 1
+			  sample2 <- runif(r*n1,ratio*-2.465,ratio*4.465) #simulate participants condition B, mean = 0
+			  
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
 			p_student <- t.test(sample1,sample2,alternative="two.sided",var.equal=TRUE)$p.value
@@ -201,9 +201,9 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- runif(n1,-2.465,4.465) #simulate participants condition A, mean = 1
-			sample2 <- runif(r*n1,ratio*-3.465,ratio*3.465) #simulate participants condition B, mean = 0
-
+			  sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, mean = 1
+			  sample2 <- runif(r*n1,ratio*-2.465,ratio*4.465) #simulate participants condition B, mean = 0
+			  
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
 			p_student <- t.test(sample1,sample2,alternative="two.sided",var.equal=TRUE)$p.value
@@ -244,9 +244,9 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- runif(n1,-2.465,4.465) #simulate participants condition A, mean = 1
-			sample2 <- runif(r*n1,ratio*-3.465,ratio*3.465) #simulate participants condition B, mean = 0
-
+			  sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, mean = 1
+			  sample2 <- runif(r*n1,ratio*-2.465,ratio*4.465) #simulate participants condition B, mean = 0
+			  
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
 			p_student <- t.test(sample1,sample2,alternative="two.sided",var.equal=TRUE)$p.value
@@ -287,9 +287,9 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- runif(n1,-2.465,4.465) #simulate participants condition A, mean = 1
-			sample2 <- runif(r*n1,ratio*-3.465,ratio*3.465) #simulate participants condition B, mean = 0
-
+			  sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, mean = 1
+			  sample2 <- runif(r*n1,ratio*-2.465,ratio*4.465) #simulate participants condition B, mean = 0
+			  
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
 			p_student <- t.test(sample1,sample2,alternative="two.sided",var.equal=TRUE)$p.value
@@ -330,9 +330,9 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- runif(n1,-2.465,4.465) #simulate participants condition A, mean = 1
-			sample2 <- runif(r*n1,ratio*-3.465,ratio*3.465) #simulate participants condition B, mean = 0
-
+			  sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, mean = 1
+			  sample2 <- runif(r*n1,ratio*-2.465,ratio*4.465) #simulate participants condition B, mean = 0
+			  
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
 			p_student <- t.test(sample1,sample2,alternative="two.sided",var.equal=TRUE)$p.value
@@ -373,9 +373,9 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- runif(n1,-2.465,4.465) #simulate participants condition A, mean = 1
-			sample2 <- runif(r*n1,ratio*-3.465,ratio*3.465) #simulate participants condition B, mean = 0
-
+			  sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, mean = 1
+			  sample2 <- runif(r*n1,ratio*-2.465,ratio*4.465) #simulate participants condition B, mean = 0
+			  
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
 			p_student <- t.test(sample1,sample2,alternative="two.sided",var.equal=TRUE)$p.value
@@ -416,9 +416,9 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- runif(n1,-2.465,4.465) #simulate participants condition A, mean = 1
-			sample2 <- runif(r*n1,ratio*-3.465,ratio*3.465) #simulate participants condition B, mean = 0
-
+			  sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, mean = 1
+			  sample2 <- runif(r*n1,ratio*-2.465,ratio*4.465) #simulate participants condition B, mean = 0
+			  
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
 			p_student <- t.test(sample1,sample2,alternative="two.sided",var.equal=TRUE)$p.value
@@ -459,9 +459,9 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- runif(n1,-2.465,4.465) #simulate participants condition A, mean = 1
-			sample2 <- runif(r*n1,ratio*-3.465,ratio*3.465) #simulate participants condition B, mean = 0
-
+			  sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, mean = 1
+			  sample2 <- runif(r*n1,ratio*-2.465,ratio*4.465) #simulate participants condition B, mean = 0
+			  
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
 			p_student <- t.test(sample1,sample2,alternative="two.sided",var.equal=TRUE)$p.value
@@ -502,9 +502,9 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- runif(n1,-2.465,4.465) #simulate participants condition A, mean = 1
-			sample2 <- runif(r*n1,ratio*-3.465,ratio*3.465) #simulate participants condition B, mean = 0
-
+			  sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, mean = 1
+			  sample2 <- runif(r*n1,ratio*-2.465,ratio*4.465) #simulate participants condition B, mean = 0
+			  
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
 			p_student <- t.test(sample1,sample2,alternative="two.sided",var.equal=TRUE)$p.value
@@ -545,9 +545,9 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- runif(n1,-2.465,4.465) #simulate participants condition A, mean = 1
-			sample2 <- runif(r*n1,ratio*-3.465,ratio*3.465) #simulate participants condition B, mean = 0
-
+			  sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, mean = 1
+			  sample2 <- runif(r*n1,ratio*-2.465,ratio*4.465) #simulate participants condition B, mean = 0
+			  
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
 			p_student <- t.test(sample1,sample2,alternative="two.sided",var.equal=TRUE)$p.value
@@ -588,9 +588,9 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- runif(n1,-2.465,4.465) #simulate participants condition A, mean = 1
-			sample2 <- runif(r*n1,ratio*-3.465,ratio*3.465) #simulate participants condition B, mean = 0
-
+			  sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, mean = 1
+			  sample2 <- runif(r*n1,ratio*-2.465,ratio*4.465) #simulate participants condition B, mean = 0
+			  
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
 			p_student <- t.test(sample1,sample2,alternative="two.sided",var.equal=TRUE)$p.value
@@ -631,9 +631,9 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- runif(n1,-2.465,4.465) #simulate participants condition A, mean = 1
-			sample2 <- runif(r*n1,ratio*-3.465,ratio*3.465) #simulate participants condition B, mean = 0
-
+			  sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, mean = 1
+			  sample2 <- runif(r*n1,ratio*-2.465,ratio*4.465) #simulate participants condition B, mean = 0
+			  
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
 			p_student <- t.test(sample1,sample2,alternative="two.sided",var.equal=TRUE)$p.value
@@ -673,9 +673,9 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# r = n2/n1
 				# ratio = sd2/sd1
 
-			sample1 <- runif(n1,-2.465,4.465) #simulate participants condition A, mean = 1
-			sample2 <- runif(r*n1,ratio*-3.465,ratio*3.465) #simulate participants condition B, mean = 0
-
+			  sample1 <- runif(n1,-3.465,3.465) #simulate participants condition A, mean = 1
+			  sample2 <- runif(r*n1,ratio*-2.465,ratio*4.465) #simulate participants condition B, mean = 0
+			  
 			# perform Student's t-test, Welch's t-test and Yuen's t-test, extracting p-value
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
 			p_student <- t.test(sample1,sample2,alternative="two.sided",var.equal=TRUE)$p.value
