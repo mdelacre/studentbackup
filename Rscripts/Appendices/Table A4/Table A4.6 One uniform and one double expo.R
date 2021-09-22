@@ -9,7 +9,7 @@ library(smoothmest)
 
 setwd(dir="C:/Users/Admin/Documents/Github projects/studentbackup/scripts outputs/Appendices/Table A4/Table A4.6 One uniform, one double exponential")
 
-ratio <- c(0.01,100)   # ratio = sd2/sd1
+ratio <- c(0.01,0.1,10,100)   # ratio = sd2/sd1
 r <- c(1,2,3,4,5)    # r = n2/n1
 
 nSims=1000000

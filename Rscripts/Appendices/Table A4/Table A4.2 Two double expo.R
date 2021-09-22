@@ -55,7 +55,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Extr and very extr SDR_Double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=10 and r=2
 
@@ -94,7 +94,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Extr and very extr SDR_Double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 
 
 ###### n=10 and r=3
@@ -134,7 +134,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Extr and very extr SDR_Double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=10 and r=4
 
@@ -173,7 +173,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Extr and very extr SDR_Double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 
 
 ###### n=10 and r=5
@@ -214,7 +214,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Extr and very extr SDR_Double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=20 and r=1
 
@@ -254,7 +254,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Extr and very extr SDR_Double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=20 and r=2
 
@@ -294,7 +294,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Extr and very extr SDR_Double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=20 and r=3
 
@@ -334,7 +334,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Extr and very extr SDR_Double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=20 and r=4
 
@@ -374,7 +374,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Extr and very extr SDR_Double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=20 and r=5
 
@@ -414,7 +414,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Extr and very extr SDR_Double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=30 and r=1
 
@@ -454,7 +454,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Extr and very extr SDR_Double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=30 and r=2
 
@@ -494,7 +494,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Extr and very extr SDR_Double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=30 and r=3
 
@@ -534,7 +534,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Extr and very extr SDR_Double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=30 and r=4
 
@@ -574,7 +574,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Extr and very extr SDR_Double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 
 ###### n=30 and r=5
 
@@ -614,5 +614,5 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 	}
 
 	alpha_rate=t(sapply(ratio,alpha_bis))
-	write.table(alpha_rate,paste("Double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
+	write.table(alpha_rate,paste("Extr and very extr SDR_Double expo_n1=",alpha_rate[1,2],"and r=",alpha_rate[1,3],".txt"),sep=";",dec=",")
 
