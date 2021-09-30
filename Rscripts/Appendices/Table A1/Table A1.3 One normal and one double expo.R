@@ -29,7 +29,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rnorm(n, mean=0, sd=2) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- rdoublex(n, mu=0, SDR*2)#simulate participants condition B, as a default option, mean = 0
+			sample2 <- rdoublex(n, mu=0, SDR*(2/sqrt(2)))#simulate participants condition B, as a default option, mean = 0
 
 			# perform Welch and Student
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -67,7 +67,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rnorm(n, mean=0, sd=2) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- rdoublex(n, mu=0, SDR*2)#simulate participants condition B, as a default option, mean = 0
+			sample2 <- rdoublex(n, mu=0, SDR*(2/sqrt(2)))#simulate participants condition B, as a default option, mean = 0
 
 			# perform Welch and Student
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -105,7 +105,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rnorm(n, mean=0, sd=2) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- rdoublex(n, mu=0, SDR*2)#simulate participants condition B, as a default option, mean = 0
+			sample2 <- rdoublex(n, mu=0, SDR*(2/sqrt(2)))#simulate participants condition B, as a default option, mean = 0
 
 			# perform Welch and Student
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -142,7 +142,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rnorm(n, mean=0, sd=2) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- rdoublex(n, mu=0, SDR*2)#simulate participants condition B, as a default option, mean = 0
+			sample2 <- rdoublex(n, mu=0, SDR*(2/sqrt(2)))#simulate participants condition B, as a default option, mean = 0
 
 			# perform Welch and Student
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -180,7 +180,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rnorm(n, mean=0, sd=2) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- rdoublex(n, mu=0, SDR*2)#simulate participants condition B, as a default option, mean = 0
+			sample2 <- rdoublex(n, mu=0, SDR*(2/sqrt(2)))#simulate participants condition B, as a default option, mean = 0
 
 			# perform Welch and Student
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -220,7 +220,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rnorm(n, mean=0, sd=2) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- rdoublex(n, mu=1, SDR*2)#simulate participants condition B, mean = 1
+			sample2 <- rdoublex(n, mu=1, SDR*(2/sqrt(2)))#simulate participants condition B, mean = 1
 
 			# perform Welch and Student
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -258,7 +258,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rnorm(n, mean=0, sd=2) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- rdoublex(n, mu=1, SDR*2)#simulate participants condition B, mean = 1
+			sample2 <- rdoublex(n, mu=1, SDR*(2/sqrt(2)))#simulate participants condition B, mean = 1
 
 			# perform Welch and Student
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -296,7 +296,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rnorm(n, mean=0, sd=2) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- rdoublex(n, mu=1, SDR*2)#simulate participants condition B, mean = 1
+			sample2 <- rdoublex(n, mu=1, SDR*(2/sqrt(2)))#simulate participants condition B, mean = 1
 
 			# perform Welch and Student
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -334,7 +334,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rnorm(n, mean=0, sd=2) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- rdoublex(n, mu=1, SDR*2)#simulate participants condition B, mean = 1
+			sample2 <- rdoublex(n, mu=1, SDR*(2/sqrt(2)))#simulate participants condition B, mean = 1
 
 			# perform Welch and Student
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
@@ -372,7 +372,7 @@ generation=c(1:nSims)   # to generate pairs of independent samples
 				# ratio = sd2/sd1
 
 			sample1 <- rnorm(n, mean=0, sd=2) #simulate participants condition A, as a default option, mean = 0
-			sample2 <- rdoublex(n, mu=1, SDR*2)#simulate participants condition B, mean = 1
+			sample2 <- rdoublex(n, mu=1, SDR*(2/sqrt(2)))#simulate participants condition B, mean = 1
 
 			# perform Welch and Student
 			p_welch <- t.test(sample1,sample2,alternative="two.sided",var.equal=FALSE)$p.value
